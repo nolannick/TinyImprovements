@@ -12,10 +12,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect('mongodb://localhost/bootcampDB', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/bootcampDB', { useNewUrlParser: true });
 
-require('./routes/html-routes')(app);
 require('./routes/api-routes')(app);
+require('./routes/html-routes')(app);
+
 
 app.listen(PORT, function() {
   console.log(`App running on port ${PORT}`);
