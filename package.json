@@ -1,5 +1,5 @@
 {
-    "name": "Tiny Improvements",
+    "name": "TinyImprovements",
     "version": "1.0.0",
     "description": "Simple server for writing reviews",
     "main": "server.js",
