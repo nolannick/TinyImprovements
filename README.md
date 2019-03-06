@@ -1,21 +1,24 @@
 # Bootcamp Connect
-The purpose of this site is to...
+The purpose of this site is to provide 'kudos' to fellow employees when someone does a good job. It is posted on the homepage for all to see.
 
 ## Getting Started
-To get started...
+To get started, click on the 'give kudos' button to write out a kudos for a fellow employee. Populate all fields and click 'Send Kudos!' button to generate a kudo for that person. 
 
 
 ## API Routes Documentation
 DB is built with Mongo. All data is stored and returned as json documents.
 
-### Registration/Login Routes
-- POST /api/users/registration
+### All Routes
+- POST /api/users
    - req.body: {
-       username,
-       password,
-       cohortId
+       username
    }
-   - stores username, hashed password, salt, and cohortId in User collection
-   - Username is required to be email address
-   - responds with newly created user item
+   - stores username. this is what is displayed in the Kudos 'From' and 'To' lists
+
+- GET /api/users
+   - returns all users.
+
+- GET /api/kudos
+    - Returns all kudos. This is what is displayed on the homepage.
+
 

@@ -6,9 +6,13 @@ module.exports = function (app) {
 
     //route to retrieve all kudos
     app.get("/api/kudos", function (req, res) {
-        Kudos.find().then(function (allKudos) {
+        Kudos.find()
+        .populate('sender')
+        .populate('receiver')
+        .then(function (allKudos) {
             res.json(allKudos);
-        }).catch(function (error) {
+        })
+        .catch(function (error) {
             res.jason({ error: error });
         });
     });
@@ -23,7 +27,7 @@ module.exports = function (app) {
     });
 
     //route to post a post
-    app.post("/api/kudos/", function (req, res) {
+    app.post("/api/kudos", function (req, res) {
         Kudos.create(req.body)
             .then(function (newKudos) {
                 res.json(newKudos);
@@ -31,5 +35,14 @@ module.exports = function (app) {
                 res.json({ error: error });
             });
 
+    });
+
+    app.post("/api/users", function (req, res) {
+        User.create(req.body)
+            .then(function (newUser) {
+                res.json(newUser);
+            }).catch(function (error) {
+                res.jason({ error: error });
+            });
     });
 };
