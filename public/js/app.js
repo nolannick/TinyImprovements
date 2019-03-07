@@ -12,7 +12,7 @@ const renderTable = function (kudos) {
     //loop through products in table and insert HTML for each row of the table
     kudos.forEach(function (element) {
         $("#kudos").append(
-            `<div class="card">
+            `<div class="card shadow-lg p-3 mb-5 bg-white rounded">
                 <h5>${element.title}</h5>
                 <h6>From: ${element.sender.username}</h6>
                 <div class="card-body">
