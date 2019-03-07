@@ -6,7 +6,7 @@ const dbUser = require("../models/User");
 //run this only once in Heroku. 'npm run seed' in console
 
 //updates based on the mongo guide to properly point to 
-mongoose.connect('mongodb://localhost/TinyImprovementsDb', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/TinyImprovementsDb', { useNewUrlParser: true });  
 
 let users = [
     {
@@ -23,26 +23,26 @@ let users = [
     }
 ];
 
-let kudos = [
-    {
-        "title": "Great drum solo",
-        "body": "Ringo had a great drump solo in our last show.",
-        "sender": 0,
-        "reciever": 3
-    },
-    {
-        "title": "Cool lyrics for a song",
-        "body": "Paul wrong some sweet lyrics for our Sergent Peppers albumn",
-        "sender": 3,
-        "reciever": 1
-    },
-    {
-        "title": "The Sitar was a great addition",
-        "body": "Even though George spent way too much time in Asia, he really has mastered the Sitar",
-        "sender": 1,
-        "reciever": 2
-    },
-]
+// let kudos = [
+//     {
+//         "title": "Great drum solo",
+//         "body": "Ringo had a great drump solo in our last show.",
+//         "sender": 0,
+//         "reciever": 3
+//     },
+//     {
+//         "title": "Cool lyrics for a song",
+//         "body": "Paul wrong some sweet lyrics for our Sergent Peppers albumn",
+//         "sender": 3,
+//         "reciever": 1
+//     },
+//     {
+//         "title": "The Sitar was a great addition",
+//         "body": "Even though George spent way too much time in Asia, he really has mastered the Sitar",
+//         "sender": 1,
+//         "reciever": 2
+//     },
+// ]
 
 //promise.all
     const usersPromise = dbUser.bulkWrite(
